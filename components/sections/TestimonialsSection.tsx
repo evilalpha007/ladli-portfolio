@@ -11,10 +11,10 @@ export default function TestimonialsSection() {
     <section className="py-20 sm:py-28 px-6 sm:px-8 lg:px-12 bg-[#0E0E11] text-white border-t border-white/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-xl mx-auto space-y-3 mb-16">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#D4A373] font-semibold flex items-center justify-center gap-2">
-            <span className="font-mono text-[#FAF7F2]/60">[ 06 ]</span>
-            Industry Endorsements
-          </span>
+          <div className="text-xs uppercase tracking-wider sm:tracking-[0.25em] text-[#D4A373] font-semibold flex flex-wrap items-center justify-center gap-2">
+            <span className="font-mono text-[#FAF7F2]/60 whitespace-nowrap shrink-0">[ 06 ]</span>
+            <span>Industry Endorsements</span>
+          </div>
           <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-light">
             Trusted by teams in Dubai.
           </h2>
