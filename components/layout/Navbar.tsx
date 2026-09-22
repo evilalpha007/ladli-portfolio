@@ -194,14 +194,6 @@ export default function Navbar() {
                 >
                   Silver Oak ↗
                 </a>
-                <a
-                  href={PORTFOLIO_DATA.personal.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#C87548]"
-                >
-                  WhatsApp ↗
-                </a>
               </div>
             </div>
           </motion.div>

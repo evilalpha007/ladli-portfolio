@@ -9,15 +9,15 @@ export default function AboutSection() {
   const languages = PORTFOLIO_DATA.personal.languages;
 
   return (
-    <section id="about" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#FAF7F2] relative">
+    <section id="about" className="py-12 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#FAF7F2] relative">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-editorial">
           <div className="space-y-2">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C87548] font-semibold flex items-center gap-2">
-              <span className="font-mono text-[#D4A373]">[ 01 ]</span>
-              About & Positioning
-            </span>
+            <div className="text-xs uppercase tracking-wider sm:tracking-[0.25em] text-[#C87548] font-semibold flex flex-wrap items-center gap-2">
+              <span className="font-mono text-[#D4A373] whitespace-nowrap shrink-0">[ 01 ]</span>
+              <span>About & Positioning</span>
+            </div>
             <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-[#121214] leading-tight">
               Strategy meets <br />
               <span className="italic font-light text-gradient-editorial">on-camera charisma.</span>

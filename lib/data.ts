@@ -63,9 +63,6 @@ export interface PortfolioData {
     bio: string;
     taglineOptions: string[];
     email: string;
-    phone: string;
-    phoneDisplay: string;
-    whatsappUrl: string;
     instagramPersonal: string;
     instagramClient: string;
     linkedin: string;
@@ -78,8 +75,9 @@ export interface PortfolioData {
   videoShowcase: {
     title: string;
     subtitle: string;
+    reelUrl: string;
     twitterEmbedUrl: string;
-    embedType: 'twitter' | 'youtube' | 'custom';
+    embedType: 'twitter' | 'youtube' | 'custom' | 'instagram';
     videoPoster: string;
     headline: string;
     duration: string;
@@ -111,9 +109,6 @@ export const PORTFOLIO_DATA: PortfolioData = {
       "From on-camera charisma to data-driven growth that converts."
     ],
     email: "ladligaurgaur@gmail.com",
-    phone: "+971 56 931 0464",
-    phoneDisplay: "+971 56 931 0464",
-    whatsappUrl: "https://wa.me/971569310464",
     instagramPersonal: "https://www.instagram.com/ladligaur",
     instagramClient: "https://www.instagram.com/silveroakglobal.ae",
     linkedin: "https://www.linkedin.com/in/ladli-gaur", // TODO: Client can replace with final LinkedIn URL
@@ -297,8 +292,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
   videoShowcase: {
     title: "Featured Video Campaign & On-Camera Feature",
     subtitle: "Showcasing high-production property tour direction, lifestyle promotion, and engaging on-screen hosting.",
+    reelUrl: "https://www.instagram.com/reel/Dc008ottfKt/",
     twitterEmbedUrl: "https://twitter.com/i/status/1800000000000000000",
-    embedType: "custom",
+    embedType: "instagram",
     videoPoster: "/images/main-hero-image.png",
     headline: "Signature Dubai Campaign: People, Brands, Stories",
     duration: "1:45",

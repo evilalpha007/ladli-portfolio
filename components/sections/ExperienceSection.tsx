@@ -8,15 +8,15 @@ export default function ExperienceSection() {
   const experiences = PORTFOLIO_DATA.experience;
 
   return (
-    <section id="experience" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#FAF7F2] relative">
+    <section id="experience" className="py-18 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#FAF7F2] relative">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-editorial">
           <div className="space-y-2">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C87548] font-semibold flex items-center gap-2">
-              <span className="font-mono text-[#D4A373]">[ 04 ]</span>
-              Career Journey & Impact
-            </span>
+            <div className="text-xs uppercase tracking-wider sm:tracking-[0.25em] text-[#C87548] font-semibold flex flex-wrap items-center gap-2">
+              <span className="font-mono text-[#D4A373] whitespace-nowrap shrink-0">[ 04 ]</span>
+              <span>Career Journey & Impact</span>
+            </div>
             <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-[#121214] leading-tight">
               Proven experience in <br />
               <span className="italic font-light text-gradient-editorial">Dubai&apos;s fast-paced market.</span>

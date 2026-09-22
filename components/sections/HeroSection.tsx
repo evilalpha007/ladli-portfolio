@@ -54,10 +54,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#C87548] font-semibold flex items-center gap-2 mb-3">
-                <span className="font-mono text-[#D4A373]">[ 00 ]</span>
-                Social Media Marketing Specialist & Content Creator
-              </span>
+              <div className="flex flex-wrap items-center gap-2 mb-3 text-[11px] sm:text-xs md:text-sm uppercase tracking-wider sm:tracking-[0.2em] text-[#C87548] font-semibold">
+                <span className="font-mono text-[#D4A373] whitespace-nowrap shrink-0">[ 00 ]</span>
+                <span>Social Media Marketing Specialist & Content Creator</span>
+              </div>
               <h1 className="font-editorial text-6xl sm:text-7xl md:text-8xl xl:text-9xl font-light text-[#121214] tracking-tight leading-[0.92]">
                 Ladli <br />
                 <span className="italic font-light text-gradient-editorial">Gaur</span>

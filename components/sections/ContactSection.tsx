@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
-  Phone,
   Send,
   CheckCircle2,
   ArrowUpRight,
@@ -63,14 +62,14 @@ export default function ContactSection() {
         setErrorMessage("Something went wrong. Please email directly or try again.");
       }
     } catch {
-      setErrorMessage("Network error. Please reach out directly via email or WhatsApp.");
+      setErrorMessage("Network error. Please reach out directly via email.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#FAF7F2] relative">
+    <section id="contact" className="py-18 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#FAF7F2] relative">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
@@ -78,10 +77,10 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121214]/5 border border-[#121214]/10 text-xs font-mono uppercase text-[#C87548]"
+            className="inline-flex flex-wrap items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121214]/5 border border-[#121214]/10 text-[11px] sm:text-xs font-mono uppercase text-[#C87548]"
           >
-            <span className="font-mono text-[#D4A373]">[ 07 ]</span>
-            <span>Open for Q2/Q3 Collaborations & Campaigns</span>
+            <span className="font-mono text-[#D4A373] whitespace-nowrap shrink-0">[ 07 ]</span>
+            <span className="text-center">Open for Q2/Q3 Collaborations & Campaigns</span>
           </motion.div>
 
           <motion.h2
@@ -134,22 +133,22 @@ export default function ContactSection() {
                   </div>
                 </a>
 
-                {/* Phone & WhatsApp */}
+                {/* Direct DM via Instagram */}
                 <a
-                  href={PORTFOLIO_DATA.personal.whatsappUrl}
+                  href={PORTFOLIO_DATA.personal.instagramPersonal}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-[#C87548]/10 text-[#121214] transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white text-[#C87548] flex items-center justify-center shadow-sm">
-                    <Phone className="w-5 h-5" />
+                    <MessageSquare className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="overflow-hidden">
                     <p className="text-[11px] font-mono text-[#5A5A62] uppercase">
-                      Phone & WhatsApp
+                      Direct Message
                     </p>
-                    <p className="text-sm font-semibold group-hover:text-[#C87548] transition-colors">
-                      {PORTFOLIO_DATA.personal.phoneDisplay}
+                    <p className="text-sm font-semibold truncate group-hover:text-[#C87548] transition-colors">
+                      @ladligaur on Instagram ↗
                     </p>
                   </div>
                 </a>
