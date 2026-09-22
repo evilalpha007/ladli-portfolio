@@ -17,10 +17,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Col 1: Big Name & Positioning */}
           <div className="md:col-span-6 space-y-4">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#D4A373] font-semibold flex items-center gap-2">
-              <span className="font-mono text-[#FAF7F2]/60">[ Location ]</span>
-              Dubai, United Arab Emirates
-            </span>
+            <div className="text-xs uppercase tracking-wider text-[#D4A373] font-semibold flex items-center gap-2 whitespace-nowrap">
+              <span className="font-mono text-[#FAF7F2]/60 shrink-0">[ Location ]</span>
+              <span>Dubai, UAE</span>
+            </div>
             <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight">
               Ladli Gaur
             </h2>
@@ -88,17 +88,6 @@ export default function Footer() {
                   className="hover:text-[#D4A373] flex items-center justify-between group transition-colors"
                 >
                   <span>@silveroakglobal.ae</span>
-                  <span className="text-xs opacity-60 group-hover:opacity-100">↗</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={PORTFOLIO_DATA.personal.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#D4A373] flex items-center justify-between group transition-colors"
-                >
-                  <span>WhatsApp Direct</span>
                   <span className="text-xs opacity-60 group-hover:opacity-100">↗</span>
                 </a>
               </li>

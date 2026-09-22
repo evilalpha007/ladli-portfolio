@@ -25,8 +25,8 @@ export default function PortfolioSection() {
     activeFilter === "all"
       ? reels
       : activeFilter === "photos"
-      ? []
-      : reels.filter((r) => r.category === activeFilter);
+        ? []
+        : reels.filter((r) => r.category === activeFilter);
 
   const showPhotos = activeFilter === "all" || activeFilter === "photos";
 
@@ -39,15 +39,15 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section id="portfolio" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#FAF7F2] relative">
+    <section id="portfolio" className="py-18 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#FAF7F2] relative">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-editorial">
           <div className="space-y-2">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C87548] font-semibold flex items-center gap-2">
-              <span className="font-mono text-[#D4A373]">[ 02 ]</span>
-              Selected Work & Reels
-            </span>
+            <div className="text-xs uppercase tracking-wider sm:tracking-[0.25em] text-[#C87548] font-semibold flex flex-wrap items-center gap-2">
+              <span className="font-mono text-[#D4A373] whitespace-nowrap shrink-0">[ 02 ]</span>
+              <span>Selected Work & Reels</span>
+            </div>
             <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-[#121214] leading-tight">
               Selected reels, tours <br />
               <span className="italic font-light text-gradient-editorial">& viral campaigns.</span>
@@ -87,11 +87,10 @@ export default function PortfolioSection() {
             <button
               key={tab.value}
               onClick={() => setActiveFilter(tab.value)}
-              className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide whitespace-nowrap transition-all cursor-pointer ${
-                activeFilter === tab.value
+              className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide whitespace-nowrap transition-all cursor-pointer ${activeFilter === tab.value
                   ? "bg-[#121214] text-white shadow-md"
                   : "bg-white text-[#5A5A62] border border-[#121214]/10 hover:border-[#121214]/30 hover:text-[#121214]"
-              }`}
+                }`}
             >
               {tab.label}{" "}
               <span className="opacity-60 text-[10px] ml-1">({tab.count})</span>

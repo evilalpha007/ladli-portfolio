@@ -25,7 +25,8 @@ export default function StatsSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono uppercase text-[#D4A373]"
           >
-            <span>[ 05 ] Key Metrics & Numbers</span>
+            <span className="whitespace-nowrap shrink-0 text-[#FAF7F2]/60">[ 05 ]</span>
+            <span>Key Metrics & Numbers</span>
           </motion.div>
 
           <motion.h2
