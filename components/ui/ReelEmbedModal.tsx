@@ -1,9 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, Eye, Heart, Share2, Sparkles, CheckCircle2 } from "lucide-react";
+import {
+  X,
+  ExternalLink,
+  Eye,
+  Heart,
+  Share2,
+  Sparkles,
+  CheckCircle2,
+  Play,
+  RotateCcw
+} from "lucide-react";
 import { InstagramIcon } from "@/components/ui/Icons";
 import { ReelItem } from "@/lib/data";
 
@@ -13,6 +23,8 @@ interface ReelEmbedModalProps {
 }
 
 export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
+  const [embedMode, setEmbedMode] = useState<"preview" | "live">("preview");
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -21,6 +33,7 @@ export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
     if (reel) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
+      setEmbedMode("preview");
     }
 
     return () => {
@@ -31,6 +44,14 @@ export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
 
   if (!reel) return null;
 
+  // Extract Instagram shortcode from URL (e.g. https://www.instagram.com/reel/Dc008ottfKt/ -> Dc008ottfKt)
+  const getShortcode = (url: string) => {
+    const match = url.match(/\/reel\/([A-Za-z0-9_-]+)/);
+    return match ? match[1] : null;
+  };
+
+  const shortcode = getShortcode(reel.sourceUrl);
+
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
@@ -40,7 +61,7 @@ export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 bg-black/80 backdrop-blur-md"
+          className="absolute inset-0 bg-black/85 backdrop-blur-md"
         />
 
         {/* Modal Container */}
@@ -54,42 +75,86 @@ export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 text-white hover:bg-[#C87548] transition-colors border border-white/10"
+            className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 text-white hover:bg-[#C87548] transition-colors border border-white/10 cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
 
-          {/* Left: Reel Frame Showcase */}
-          <div className="relative w-full md:w-5/12 bg-black flex items-center justify-center p-4 sm:p-6">
-            <div className="relative aspect-[9/16] w-full max-w-[280px] rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-              <Image
-                src={reel.thumbnail}
-                alt={reel.title}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
+          {/* Left: Reel Frame Showcase / Live Embed */}
+          <div className="relative w-full md:w-5/12 bg-black flex flex-col items-center justify-center p-4 sm:p-6 border-b md:border-b-0 md:border-r border-white/10">
+            {embedMode === "live" && shortcode ? (
+              <div className="relative aspect-[9/16] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-black">
+                <iframe
+                  src={`https://www.instagram.com/reel/${shortcode}/embed/`}
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  scrolling="no"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                />
+              </div>
+            ) : (
+              <div className="relative aspect-[9/16] w-full max-w-[280px] rounded-2xl overflow-hidden shadow-2xl border border-white/20 group">
+                <Image
+                  src={reel.thumbnail}
+                  alt={reel.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30 pointer-events-none" />
 
-              <div className="absolute top-3 left-3">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium uppercase bg-black/70 border border-white/20 text-white">
-                  <InstagramIcon className="w-3 h-3 text-[#C87548]" />
-                  @{reel.sourceAccount}
+                {/* Account badge */}
+                <div className="absolute top-3 left-3">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium uppercase bg-black/70 border border-white/20 text-white">
+                    <InstagramIcon className="w-3 h-3 text-[#C87548]" />
+                    @{reel.sourceAccount}
+                  </span>
+                </div>
+
+                {/* Interactive Play Embed Button */}
+                {shortcode && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      onClick={() => setEmbedMode("live")}
+                      className="w-16 h-16 rounded-full bg-[#C87548] text-white flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-[#D4A373] transition-all cursor-pointer"
+                      title="Play live Instagram reel"
+                    >
+                      <Play className="w-7 h-7 fill-white translate-x-0.5" />
+                    </button>
+                  </div>
+                )}
+
+                {/* Bottom open link */}
+                <div className="absolute bottom-3 left-3 right-3 text-center">
+                  <a
+                    href={reel.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-3 rounded-xl bg-white text-[#121214] text-xs font-semibold uppercase tracking-wider hover:bg-[#D4A373] hover:text-white transition-colors shadow-lg"
+                  >
+                    <span>Open on Instagram</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            )}
+
+            {/* Toggle Embed Mode Button */}
+            {shortcode && (
+              <button
+                onClick={() =>
+                  setEmbedMode(embedMode === "preview" ? "live" : "preview")
+                }
+                className="mt-3 inline-flex items-center gap-1.5 text-xs text-[#D4A373] hover:text-white transition-colors cursor-pointer font-mono"
+              >
+                <RotateCcw className="w-3 h-3" />
+                <span>
+                  {embedMode === "preview"
+                    ? "Switch to Live Instagram Player"
+                    : "Switch to Strategy View"}
                 </span>
-              </div>
-
-              <div className="absolute bottom-3 left-3 right-3 text-center">
-                <a
-                  href={reel.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full py-2 px-3 rounded-xl bg-[#C87548] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#D4A373] transition-colors shadow-lg"
-                >
-                  <span>Open On Instagram</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
+              </button>
+            )}
           </div>
 
           {/* Right: Creative Breakdown & Strategy Notes */}
@@ -113,19 +178,25 @@ export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
                   <div className="text-xs text-white/50 flex items-center justify-center gap-1">
                     <Eye className="w-3 h-3 text-[#D4A373]" /> Views
                   </div>
-                  <div className="text-base font-bold text-white mt-0.5">{reel.views}</div>
+                  <div className="text-base font-bold text-white mt-0.5">
+                    {reel.views}
+                  </div>
                 </div>
                 <div>
                   <div className="text-xs text-white/50 flex items-center justify-center gap-1">
                     <Heart className="w-3 h-3 text-[#C87548]" /> Likes
                   </div>
-                  <div className="text-base font-bold text-white mt-0.5">{reel.likes}</div>
+                  <div className="text-base font-bold text-white mt-0.5">
+                    {reel.likes}
+                  </div>
                 </div>
                 <div>
                   <div className="text-xs text-white/50 flex items-center justify-center gap-1">
                     <Share2 className="w-3 h-3 text-white/70" /> Shares
                   </div>
-                  <div className="text-base font-bold text-white mt-0.5">{reel.shares}</div>
+                  <div className="text-base font-bold text-white mt-0.5">
+                    {reel.shares}
+                  </div>
                 </div>
               </div>
 
@@ -134,7 +205,7 @@ export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
                 <div className="p-4 rounded-xl bg-[#C87548]/10 border border-[#C87548]/20 space-y-1">
                   <div className="flex items-center gap-1.5 text-xs uppercase tracking-wider font-semibold text-[#D4A373]">
                     <Sparkles className="w-3.5 h-3.5" />
-                    Opening Hook (0:00 - 0:03)
+                    Opening Hook & Theme
                   </div>
                   <p className="text-sm italic text-[#FAF7F2] font-editorial">
                     &ldquo;{reel.hook}&rdquo;
@@ -157,15 +228,15 @@ export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
                   <ul className="space-y-1.5 text-xs text-[#FAF7F2]/70">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#C87548]" />
-                      Custom sound design & trending audio synchronization
+                      Authentic on-camera presence & relatable delivery
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#C87548]" />
-                      High-retention mobile framing & on-screen typography
+                      High-retention mobile framing & trending audio sync
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#C87548]" />
-                      Targeted Dubai real estate & lifestyle hashtag indexing
+                      High-converting call-to-action for sponsor/brand
                     </li>
                   </ul>
                 </div>
@@ -174,16 +245,16 @@ export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
 
             {/* Bottom Actions */}
             <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <span className="text-xs text-white/40">
-                Source: instagram.com/{reel.sourceAccount}
+              <span className="text-xs text-white/40 font-mono">
+                Source: {reel.sourceUrl}
               </span>
               <a
                 href={reel.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-white text-[#121214] text-xs font-semibold uppercase tracking-wider hover:bg-[#D4A373] hover:text-white transition-all shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#C87548] to-[#D4A373] text-white text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-all shadow-md"
               >
-                <span>View Full Live Reel</span>
+                <span>Watch Reel on Instagram</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>

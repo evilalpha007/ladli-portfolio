@@ -41,8 +41,8 @@ export default function AboutSection() {
           >
             <div className="relative aspect-[3/4] w-full rounded-3xl overflow-hidden shadow-2xl border border-[#121214]/10 bg-[#121214]">
               <Image
-                src="/images/about-portrait.jpg"
-                alt="Ladli Gaur filming on camera in Dubai penthouse"
+                src="/images/about-impact.png"
+                alt="Ladli Gaur — From Ideas to Impact Dubai"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"

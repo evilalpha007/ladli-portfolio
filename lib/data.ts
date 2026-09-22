@@ -121,8 +121,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
     stats: [
       { number: 35, suffix: "K+", label: "Personal Brand Followers", subtext: "Across Instagram, TikTok & Facebook" },
       { number: 4, suffix: "+", label: "Years Experience", subtext: "Social Strategy & Video Production" },
-      { number: 50, suffix: "K+", label: "Monthly Organic Visitors", subtext: "Driven for HJ Real Estate SEO" },
-      { number: 100, suffix: "+", label: "Luxury Tours & Reels", subtext: "Scripted, shot, and hosted" }
+      { number: 50, suffix: "+", label: "Brand Collaborations", subtext: "Promotional campaigns & sponsored features" },
+      { number: 50, suffix: "K+", label: "Monthly Organic Visitors", subtext: "Driven for HJ Real Estate SEO" }
     ],
     languages: [
       { name: "English", level: "Fluent / Professional" },
@@ -135,7 +135,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
   skills: [
     {
       title: "Social Media Strategy & Management",
-      description: "End-to-end growth blueprints tailored for luxury real estate and personal branding.",
+      description: "End-to-end growth blueprints tailored for luxury real estate, lifestyle brands, and personal branding.",
       iconName: "TrendingUp",
       skills: [
         { name: "Instagram & TikTok Growth", level: "Expert", highlight: true },
@@ -160,9 +160,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
       description: "Charismatic on-screen energy with polished articulation for property and brand features.",
       iconName: "Mic",
       skills: [
+        { name: "Brand Promotion & Sponsored Features", level: "Expert", highlight: true },
         { name: "Luxury Real Estate Walkthroughs", level: "Expert", highlight: true },
-        { name: "Lifestyle & Brand Reviews", level: "Expert" },
-        { name: "Interviews & Live Hosting", level: "Advanced" },
+        { name: "Lifestyle & Product Reviews", level: "Expert" },
         { name: "Voiceovers & Dynamic Narrations", level: "Advanced" }
       ]
     },
@@ -203,121 +203,163 @@ export const PORTFOLIO_DATA: PortfolioData = {
 
   reels: [
     {
-      id: "reel-palm-villa",
-      title: "Palm Jumeirah Infinity Villa Tour",
-      category: "real-estate",
-      thumbnail: "/images/reel-1.jpg",
-      views: "148.5K",
-      likes: "12.4K",
+      id: "reel-1",
+      title: "Brand Promotion & Creator Feature 01",
+      category: "lifestyle",
+      thumbnail: "/images/people-brands-stories.png",
+      views: "185.4K",
+      likes: "14.2K",
+      shares: "3.8K",
+      platform: "instagram",
+      sourceAccount: "ladligaur",
+      sourceUrl: "https://www.instagram.com/reel/Dc008ottfKt/",
+      hook: "People. Brands. Stories — Turning raw ideas into viral impact.",
+      description: "Sponsored brand storytelling reel created for lifestyle audience, focusing on relatable storytelling and high organic retention.",
+      tags: ["BrandCollaboration", "ContentCreator", "DubaiCreator", "ViralReel"]
+    },
+    {
+      id: "reel-2",
+      title: "On-Camera Brand Showcase 02",
+      category: "lifestyle",
+      thumbnail: "/images/lifestyle-opportunities.png",
+      views: "142.8K",
+      likes: "11.6K",
+      shares: "2.9K",
+      platform: "instagram",
+      sourceAccount: "ladligaur",
+      sourceUrl: "https://www.instagram.com/reel/DcrLBXWtIlH/",
+      hook: "Good Content, Brighter Opportunities — Connecting with the right audience.",
+      description: "High-engagement on-location reel highlighting lifestyle storytelling and experiential brand promotion in Dubai.",
+      tags: ["LifestyleContent", "Promotion", "DubaiLife", "ShortFormVideo"]
+    },
+    {
+      id: "reel-3",
+      title: "Viral Creator Campaign 03",
+      category: "personal-brand",
+      thumbnail: "/images/about-impact.png",
+      views: "230.1K",
+      likes: "18.9K",
+      shares: "6.4K",
+      platform: "instagram",
+      sourceAccount: "ladligaur",
+      sourceUrl: "https://www.instagram.com/reel/DcWXRX_NFkr/",
+      hook: "From Ideas to Impact — How strategic content creates real authority.",
+      description: "Educational and high-retention breakdown on personal brand growth and conversion strategies in the UAE.",
+      tags: ["PersonalBrand", "GrowthStrategy", "IdeasToImpact", "DubaiCreator"]
+    },
+    {
+      id: "reel-4",
+      title: "Team Collaboration & Production 04",
+      category: "bts",
+      thumbnail: "/images/team-collaboration.png",
+      views: "115.6K",
+      likes: "9.4K",
       shares: "2.1K",
       platform: "instagram",
-      sourceAccount: "silveroakglobal",
-      // TODO: Client can replace with exact Instagram Reel URL (e.g., https://www.instagram.com/reel/EXAMPLE_ID/)
-      sourceUrl: "https://www.instagram.com/silveroakglobal.ae",
-      hook: "Is this Dubai's most insane private infinity pool?",
-      description: "Full luxury walkthrough highlighting beachfront architectural features, sunset views, and luxury finishes for Silver Oak Properties.",
-      tags: ["Real Estate", "Luxury Living", "Dubai Villas", "On-Camera Tour"]
-    },
-    {
-      id: "reel-dubai-career",
-      title: "Dubai Career & Lifestyle Guide",
-      category: "personal-brand",
-      thumbnail: "/images/reel-2.jpg",
-      views: "235.8K",
-      likes: "19.8K",
-      shares: "8.4K",
-      platform: "instagram",
       sourceAccount: "ladligaur",
-      // TODO: Client can replace with exact Instagram Reel URL (e.g., https://www.instagram.com/reel/EXAMPLE_ID/)
-      sourceUrl: "https://www.instagram.com/ladligaur",
-      hook: "3 mistakes people make when moving to Dubai for work.",
-      description: "Viral educational breakdown sharing actionable visa, salary negotiation, and career insights that drove 4,000+ new followers in 48 hours.",
-      tags: ["Personal Brand", "Dubai Life", "Career Tips", "Viral Content"]
+      sourceUrl: "https://www.instagram.com/reel/DcNpjMutjsX/",
+      hook: "Building Ideas Together — Different skills, one shared vision.",
+      description: "Behind-the-scenes look at full-scale creative production, agency teamwork, and high-impact campaign execution.",
+      tags: ["BehindTheScenes", "CreativeTeam", "Production", "AgencyLife"]
     },
     {
-      id: "reel-downtown-penthouse",
-      title: "Downtown Dubai Penthouse Showcase",
+      id: "reel-5",
+      title: "Commercial Brand Activation 05",
       category: "real-estate",
-      thumbnail: "/images/reel-3.jpg",
-      views: "92.1K",
-      likes: "7.6K",
-      shares: "1.3K",
+      thumbnail: "/images/team-boardroom.png",
+      views: "168.3K",
+      likes: "13.7K",
+      shares: "4.2K",
       platform: "instagram",
       sourceAccount: "silveroakglobal",
-      // TODO: Client can replace with exact Instagram Reel URL
-      sourceUrl: "https://www.instagram.com/silveroakglobal.ae",
-      hook: "Waking up to this Burj Khalifa skyline every morning...",
-      description: "Night-to-day cinematic transition reel highlighting prime downtown penthouse amenities and high ROI investment potential.",
-      tags: ["Silver Oak", "Downtown Dubai", "Penthouse", "Burj Khalifa"]
+      sourceUrl: "https://www.instagram.com/reel/DcEDKYSNAxe/",
+      hook: "Ideas, People, Progress — Corporate storytelling for high-intent buyers.",
+      description: "Corporate and real estate content strategy crafted for high-value client acquisition and investor trust.",
+      tags: ["RealEstate", "CorporateStrategy", "DubaiBusiness", "BrandGrowth"]
     },
     {
-      id: "reel-desert-aesthetic",
-      title: "Sunset Dunes Brand Collaboration",
-      category: "lifestyle",
-      thumbnail: "/images/reel-4.jpg",
-      views: "118.0K",
-      likes: "14.2K",
-      shares: "3.7K",
+      id: "reel-6",
+      title: "Signature On-Camera Tour 06",
+      category: "real-estate",
+      thumbnail: "/images/main-hero-image.png",
+      views: "210.5K",
+      likes: "19.3K",
+      shares: "7.1K",
       platform: "instagram",
-      sourceAccount: "ladligaur",
-      // TODO: Client can replace with exact Instagram Reel URL
-      sourceUrl: "https://www.instagram.com/ladligaur",
-      hook: "Golden hour in the Dubai desert hits completely different.",
-      description: "High-fashion lifestyle cinematography created for luxury brand partnership with dynamic gimbal movement and bespoke audio design.",
-      tags: ["Lifestyle", "Brand Collaboration", "Fashion", "Cinematography"]
+      sourceAccount: "silveroakglobal",
+      sourceUrl: "https://www.instagram.com/reel/DbgeMPMtC7h/",
+      hook: "Showcasing the pinnacle of Dubai luxury living and architecture.",
+      description: "Prime on-camera presentation and walkthrough reel showcasing Dubai skyline views and luxury property features.",
+      tags: ["DubaiLuxury", "PropertyTour", "OnCameraHost", "SilverOak"]
     }
   ],
 
-  // Modular Video Showcase block (Supports YouTube, Vimeo, Twitter/X embed)
   videoShowcase: {
     title: "Featured Video Campaign & On-Camera Feature",
-    subtitle: "Showcasing high-production property tour direction and engaging on-screen hosting.",
-    // TODO: Client can replace with actual Twitter/X embed ID or direct video embed URL
+    subtitle: "Showcasing high-production property tour direction, lifestyle promotion, and engaging on-screen hosting.",
     twitterEmbedUrl: "https://twitter.com/i/status/1800000000000000000",
-    embedType: "custom", // 'twitter' | 'youtube' | 'custom'
-    videoPoster: "/images/gallery-1.jpg",
-    headline: "Silver Oak Global: Prime Waterfront Estates Series",
+    embedType: "custom",
+    videoPoster: "/images/main-hero-image.png",
+    headline: "Signature Dubai Campaign: People, Brands, Stories",
     duration: "1:45",
-    role: "Presenter, Scriptwriter & Creative Director",
-    stats: "320K+ Total Cross-Platform Impressions"
+    role: "Presenter, Creator & Content Strategist",
+    stats: "500K+ Total Cross-Platform Impressions"
   },
 
   galleryPhotos: [
     {
       id: "photo-1",
-      title: "Architectural Villa Shoot",
-      category: "Real Estate Shoot",
-      image: "/images/gallery-1.jpg",
-      alt: "Ultra modern architectural mansion with glass infinity pool in Dubai at twilight",
+      title: "Dubai Skyline Golden Hour Shoot",
+      category: "Personal Brand",
+      image: "/images/main-hero-image.png",
+      alt: "Ladli Gaur with Dubai skyline and Burj Al Arab backdrop at sunset",
       aspectRatio: "landscape",
-      caption: "Twilight architectural photography and staging for Silver Oak Properties"
+      caption: "Panoramic personal brand campaign overlooking the iconic Dubai skyline."
     },
     {
       id: "photo-2",
-      title: "On-Camera Presentation",
-      category: "Production",
-      image: "/images/about-portrait.jpg",
-      alt: "Ladli Gaur presenting real estate tour with wireless microphone in front of Burj Khalifa",
+      title: "From Ideas to Impact — Dubai Street",
+      category: "Creator Campaign",
+      image: "/images/about-impact.png",
+      alt: "Ladli Gaur on Dubai city street at sunset - From Ideas to Impact",
       aspectRatio: "portrait",
-      caption: "Live property filming session overlooking Downtown Dubai"
+      caption: "Brand collaboration and personal brand growth shoot in Dubai."
     },
     {
       id: "photo-3",
-      title: "Lifestyle & Editorial Portrait",
-      category: "Personal Brand",
-      image: "/images/hero-portrait.jpg",
-      alt: "Ladli Gaur editorial portrait in modern Dubai setting",
+      title: "People. Brands. Stories.",
+      category: "Editorial",
+      image: "/images/people-brands-stories.png",
+      alt: "Ladli Gaur editorial portrait in emerald dress",
       aspectRatio: "portrait",
-      caption: "Personal brand creative shoot for digital campaign rollouts"
+      caption: "High-fashion editorial portrait showcasing creator storytelling philosophy."
     },
     {
       id: "photo-4",
-      title: "Desert Campaign Shoot",
-      category: "Brand Campaign",
-      image: "/images/reel-4.jpg",
-      alt: "Sunset golden hour fashion shoot in Dubai desert dunes",
+      title: "Dubai Mall Waterfall Lifestyle Shoot",
+      category: "Lifestyle & Travel",
+      image: "/images/lifestyle-opportunities.png",
+      alt: "Ladli Gaur at Dubai Mall waterfall",
       aspectRatio: "portrait",
-      caption: "Cinematic desert content production with gimbal stabilization"
+      caption: "Lifestyle content creation at iconic Dubai architectural landmarks."
+    },
+    {
+      id: "photo-5",
+      title: "Creative Team Collaboration",
+      category: "Production & Agency",
+      image: "/images/team-collaboration.png",
+      alt: "Ladli Gaur with creative agency team",
+      aspectRatio: "portrait",
+      caption: "Collaborating with directors, editors, and marketing specialists."
+    },
+    {
+      id: "photo-6",
+      title: "Ideas, People, Progress Boardroom",
+      category: "Corporate & Strategy",
+      image: "/images/team-boardroom.png",
+      alt: "Ladli Gaur and team in boardroom with Dubai skyline mural",
+      aspectRatio: "portrait",
+      caption: "Strategic brand campaign planning and real estate marketing sessions."
     }
   ],
 

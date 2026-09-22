@@ -148,7 +148,7 @@ export default function HeroSection() {
               {/* Outer decorative frame */}
               <div className="relative aspect-[3/4] w-full rounded-3xl overflow-hidden shadow-2xl border border-[#121214]/10 bg-[#FAF7F2]">
                 <Image
-                  src="/images/hero-portrait.jpg"
+                  src="/images/main-hero-image.png"
                   alt="Ladli Gaur — Social Media Specialist & Content Creator Dubai"
                   fill
                   priority
