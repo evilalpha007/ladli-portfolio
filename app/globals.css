@@ -1,26 +1,165 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-cream: #FAF7F2;
+    --bg-sand: #F3ECE2;
+    --bg-card: #FFFFFF;
+    --text-primary: #121214;
+    --text-secondary: #5A5A62;
+    --text-muted: #8E8E96;
+    --accent-terracotta: #C87548;
+    --accent-gold: #D4A373;
+    --accent-gold-light: #E9C46A;
+    --border-light: rgba(18, 18, 20, 0.08);
+    --border-dark: rgba(255, 255, 255, 0.12);
+    --dark-surface: #0E0E11;
+    --dark-card: #17171C;
+    --dark-card-hover: #1F1F26;
+  }
+
+  html {
+    scroll-behavior: auto; /* Lenis handles smooth scrolling */
+    background-color: var(--bg-cream);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+    selection-background-color: var(--accent-terracotta);
+    selection-color: #ffffff;
+  }
+
+  ::selection {
+    background-color: #C87548;
+    color: #ffffff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Typography Utility Classes */
+.font-editorial {
+  font-family: var(--font-display), 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Glassmorphic Effects */
+.glass-header {
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(18, 18, 20, 0.06);
+}
+
+.glass-card-dark {
+  background: rgba(23, 23, 28, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(18, 18, 20, 0.06);
+}
+
+/* Subtle editorial borders */
+.border-editorial {
+  border-color: rgba(18, 18, 20, 0.09);
+}
+
+.border-editorial-dark {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Glow & Accent Gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FAF7F2 0%, #D4A373 50%, #C87548 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-editorial {
+  background: linear-gradient(135deg, #121214 0%, #44444C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-terracotta {
+  background: rgba(200, 117, 72, 0.1);
+  color: #C87548;
+  border: 1px solid rgba(200, 117, 72, 0.2);
+}
+
+.badge-gold {
+  background: rgba(212, 163, 115, 0.12);
+  color: #B8834F;
+  border: 1px solid rgba(212, 163, 115, 0.25);
+}
+
+/* Lenis recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Hide scrollbars while preserving scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Subtle Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4A373;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C87548;
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
