@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/lib/data";
 
 export default function TestimonialsSection() {
@@ -12,7 +12,7 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-xl mx-auto space-y-3 mb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-[#D4A373] font-semibold flex items-center justify-center gap-2">
-            <Sparkles className="w-3.5 h-3.5" />
+            <span className="font-mono text-[#FAF7F2]/60">[ 06 ]</span>
             Industry Endorsements
           </span>
           <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-light">

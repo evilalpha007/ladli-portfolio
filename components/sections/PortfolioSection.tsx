@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Filter, Play, Camera, ArrowUpRight } from "lucide-react";
+import { Filter, Play, Camera, ArrowUpRight } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/Icons";
 import { PORTFOLIO_DATA, ReelItem, GalleryPhoto } from "@/lib/data";
 import MediaCard from "@/components/ui/MediaCard";
@@ -45,8 +45,8 @@ export default function PortfolioSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-editorial">
           <div className="space-y-2">
             <span className="text-xs uppercase tracking-[0.25em] text-[#C87548] font-semibold flex items-center gap-2">
-              <Sparkles className="w-4 h-4" />
-              Featured Showcase & Work
+              <span className="font-mono text-[#D4A373]">[ 02 ]</span>
+              Selected Work & Reels
             </span>
             <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-[#121214] leading-tight">
               Selected reels, tours <br />

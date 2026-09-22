@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "Ladli Gaur Portfolio",
     images: [
       {
-        url: "/images/hero-portrait.jpg",
+        url: "/images/main-hero-image.png",
         width: 1200,
         height: 630,
         alt: "Ladli Gaur - Social Media Marketing Specialist & Content Creator",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ladli Gaur | Social Media Marketing Specialist & Content Creator",
     description: "Dubai-based social strategist and content creator with 35K+ community and proven luxury real estate marketing growth.",
-    images: ["/images/hero-portrait.jpg"],
+    images: ["/images/main-hero-image.png"],
   },
   robots: {
     index: true,

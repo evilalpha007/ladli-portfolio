@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Users, Calendar, TrendingUp, Video } from "lucide-react";
+import { Users, Calendar, TrendingUp, Video } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { PORTFOLIO_DATA } from "@/lib/data";
 
@@ -25,8 +25,7 @@ export default function StatsSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono uppercase text-[#D4A373]"
           >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Proven Track Record & Numbers</span>
+            <span>[ 05 ] Key Metrics & Numbers</span>
           </motion.div>
 
           <motion.h2

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Play, Sparkles, Video, ExternalLink, ShieldCheck } from "lucide-react";
+import { Play, Video, ExternalLink, ShieldCheck } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/lib/data";
 
 export default function VideoShowcase() {
@@ -91,7 +91,7 @@ export default function VideoShowcase() {
             <div className="relative w-full h-full flex items-center justify-center bg-black">
               {/* Fallback interactive HTML5 video demo & embed placeholder */}
               <div className="p-8 text-center text-white space-y-4 max-w-lg">
-                <Sparkles className="w-10 h-10 text-[#D4A373] mx-auto animate-pulse" />
+                <Play className="w-10 h-10 text-[#D4A373] mx-auto fill-current" />
                 <h4 className="font-editorial text-2xl font-light">
                   {data.headline}
                 </h4>

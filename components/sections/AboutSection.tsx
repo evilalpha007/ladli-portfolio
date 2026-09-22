@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Sparkles, Video, TrendingUp, Languages, Mic, Award, CheckCircle2 } from "lucide-react";
+import { Video, TrendingUp, Languages, Mic, Award, CheckCircle2, Zap } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/lib/data";
 
 export default function AboutSection() {
@@ -15,7 +15,7 @@ export default function AboutSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-editorial">
           <div className="space-y-2">
             <span className="text-xs uppercase tracking-[0.25em] text-[#C87548] font-semibold flex items-center gap-2">
-              <Sparkles className="w-4 h-4" />
+              <span className="font-mono text-[#D4A373]">[ 01 ]</span>
               About & Positioning
             </span>
             <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-[#121214] leading-tight">
@@ -87,7 +87,7 @@ export default function AboutSection() {
               className="space-y-4"
             >
               <h3 className="font-editorial text-2xl sm:text-3xl text-[#121214] font-normal leading-snug">
-                &ldquo;I believe the best social content doesn’t look like an ad — it feels like an irresistible story you can’t help but watch to the end.&rdquo;
+                &ldquo;I believe the best social content doesn’t look like an ad it feels like an irresistible story you can’t help but watch to the end.&rdquo;
               </h3>
 
               <div className="space-y-4 text-sm sm:text-base text-[#5A5A62] font-light leading-relaxed">
@@ -131,7 +131,7 @@ export default function AboutSection() {
 
               <div className="p-4 rounded-2xl bg-white border border-[#121214]/10 space-y-2 shadow-sm">
                 <div className="w-8 h-8 rounded-lg bg-[#121214]/5 text-[#121214] flex items-center justify-center">
-                  <Sparkles className="w-4 h-4" />
+                  <Zap className="w-4 h-4" />
                 </div>
                 <h4 className="text-sm font-semibold text-[#121214]">
                   End-to-End Speed

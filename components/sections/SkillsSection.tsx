@@ -7,11 +7,12 @@ import {
   Mic,
   Scissors,
   BarChart3,
-  Sparkles,
   PenTool,
   Target,
   CalendarCheck,
-  Bot
+  Bot,
+  Zap,
+  Layers
 } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/lib/data";
 
@@ -21,7 +22,7 @@ const iconMap: Record<string, React.ElementType> = {
   Mic,
   Scissors,
   BarChart3,
-  Sparkles,
+  Sparkles: Zap,
   PenTool,
   Target,
   CalendarCheck,
@@ -38,7 +39,7 @@ export default function SkillsSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-editorial">
           <div className="space-y-2">
             <span className="text-xs uppercase tracking-[0.25em] text-[#C87548] font-semibold flex items-center gap-2">
-              <Sparkles className="w-4 h-4" />
+              <span className="font-mono text-[#D4A373]">[ 03 ]</span>
               Core Competencies & Tooling
             </span>
             <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-[#121214] leading-tight">
@@ -55,7 +56,7 @@ export default function SkillsSection() {
         {/* Dynamic Skill Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pt-16">
           {skillCategories.map((category, idx) => {
-            const Icon = iconMap[category.iconName] || Sparkles;
+            const Icon = iconMap[category.iconName] || Layers;
             return (
               <motion.div
                 key={category.title}
@@ -115,7 +116,7 @@ export default function SkillsSection() {
         >
           <div className="space-y-2 text-center md:text-left">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#D4A373]">
-              <Sparkles className="w-3.5 h-3.5" />
+              <span>[ AI & Strategy ]</span>
               Next-Gen Production Workflows
             </div>
             <h4 className="font-editorial text-2xl font-light">

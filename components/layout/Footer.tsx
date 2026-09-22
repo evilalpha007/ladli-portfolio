@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp, Heart, Sparkles } from "lucide-react";
+import { ArrowUp, Heart } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/lib/data";
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Col 1: Big Name & Positioning */}
           <div className="md:col-span-6 space-y-4">
             <span className="text-xs uppercase tracking-[0.25em] text-[#D4A373] font-semibold flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5" />
+              <span className="font-mono text-[#FAF7F2]/60">[ Location ]</span>
               Dubai, United Arab Emirates
             </span>
             <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight">
@@ -116,9 +116,23 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FAF7F2]/60">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#FAF7F2]/60">
           <div className="flex items-center gap-1">
             <span>© {new Date().getFullYear()} Ladli Gaur. All rights reserved.</span>
+          </div>
+
+          {/* Developer Credit */}
+          <div className="flex items-center gap-1 text-[11px] text-[#FAF7F2]/50">
+            <span>Designed & Developed by</span>
+            <a
+              href="https://www.linkedin.com/in/dibakar-sharma-4054ba200"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#D4A373] hover:text-white font-medium underline underline-offset-4 decoration-[#D4A373]/40 hover:decoration-white transition-all inline-flex items-center gap-0.5"
+            >
+              <span>Dibakar Sharma</span>
+              <span className="text-[10px]">↗</span>
+            </a>
           </div>
 
           <div className="flex items-center gap-6">

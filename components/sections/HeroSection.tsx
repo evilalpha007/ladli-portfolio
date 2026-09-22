@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Sparkles, MapPin, Play } from "lucide-react";
+import { ArrowDown, ArrowUpRight, MapPin, Play } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/Icons";
 import { PORTFOLIO_DATA } from "@/lib/data";
 import MagneticButton from "@/components/ui/MagneticButton";
@@ -55,7 +55,7 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#C87548] font-semibold flex items-center gap-2 mb-3">
-                <Sparkles className="w-4 h-4" />
+                <span className="font-mono text-[#D4A373]">[ 00 ]</span>
                 Social Media Marketing Specialist & Content Creator
               </span>
               <h1 className="font-editorial text-6xl sm:text-7xl md:text-8xl xl:text-9xl font-light text-[#121214] tracking-tight leading-[0.92]">

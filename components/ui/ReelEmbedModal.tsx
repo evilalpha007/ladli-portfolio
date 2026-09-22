@@ -9,7 +9,6 @@ import {
   Eye,
   Heart,
   Share2,
-  Sparkles,
   CheckCircle2,
   Play,
   RotateCcw
@@ -204,7 +203,7 @@ export default function ReelEmbedModal({ reel, onClose }: ReelEmbedModalProps) {
               <div className="space-y-3 pt-2">
                 <div className="p-4 rounded-xl bg-[#C87548]/10 border border-[#C87548]/20 space-y-1">
                   <div className="flex items-center gap-1.5 text-xs uppercase tracking-wider font-semibold text-[#D4A373]">
-                    <Sparkles className="w-3.5 h-3.5" />
+                    <span className="font-mono text-[#D4A373]">[ Concept ]</span>
                     Opening Hook & Theme
                   </div>
                   <p className="text-sm italic text-[#FAF7F2] font-editorial">

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Sparkles,
   Mail,
   Phone,
   Send,
@@ -11,7 +10,7 @@ import {
   ArrowUpRight,
   MessageSquare
 } from "lucide-react";
-import { InstagramIcon, LinkedinIcon, WhatsAppIcon } from "@/components/ui/Icons";
+import { InstagramIcon } from "@/components/ui/Icons";
 import confetti from "canvas-confetti";
 import { PORTFOLIO_DATA } from "@/lib/data";
 
@@ -81,7 +80,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121214]/5 border border-[#121214]/10 text-xs font-mono uppercase text-[#C87548]"
           >
-            <Sparkles className="w-3.5 h-3.5" />
+            <span className="font-mono text-[#D4A373]">[ 07 ]</span>
             <span>Open for Q2/Q3 Collaborations & Campaigns</span>
           </motion.div>
 

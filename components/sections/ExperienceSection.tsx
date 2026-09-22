@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Briefcase, MapPin, Calendar, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { Briefcase, MapPin, Calendar, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/lib/data";
 
 export default function ExperienceSection() {
@@ -14,7 +14,7 @@ export default function ExperienceSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-editorial">
           <div className="space-y-2">
             <span className="text-xs uppercase tracking-[0.25em] text-[#C87548] font-semibold flex items-center gap-2">
-              <Sparkles className="w-4 h-4" />
+              <span className="font-mono text-[#D4A373]">[ 04 ]</span>
               Career Journey & Impact
             </span>
             <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-[#121214] leading-tight">
